@@ -63,7 +63,7 @@ async function registerUser() {
     let data = await fs.readFile("data.json");
     data = JSON.parse(data);
 
-    let found = (await data).find((ele) => ele.email == email);
+    let found = await data.find((ele) => ele.email == email);
     if (found) {
       throw chalk.bgGreen("User Already Registered");
     }
