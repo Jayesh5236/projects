@@ -2,7 +2,7 @@ import chalk, { Chalk } from "chalk";
 import { question } from "readline-sync";
 import bcrypt from "bcrypt";
 import fs from "fs/promises";
-import loggedIn from "../Todo/index.js";
+import loggedIn from "../todo/loggedIn.js";
 
 async function loginUser() {
   try {
@@ -19,23 +19,23 @@ async function loginUser() {
       password = question("Enter Your Password : ", { hideEchoBack: true });
     }
 
-    let data = await fs.readFile("data.json")
-    data=JSON.parse(data)
+    let data = await fs.readFile("data.json");
+    data = JSON.parse(data);
 
-    let emailFound =data.find(ele=>ele.email==email)
-    if (!emailFound){
-        throw chalk.redBright("User Not Found /Wrong Email ")
+    let emailFound = data.find((ele) => ele.email == email);
+    if (!emailFound) {
+      throw chalk.redBright("User Not Found /Wrong Email ");
     }
 
-    let passwordFound=await bcrypt.compare(password,emailFound.password)
-    if (!passwordFound){
-        throw chalk.redBright("Password Doesnt Match")
+    let passwordFound = await bcrypt.compare(password, emailFound.password);
+    if (!passwordFound) {
+      throw chalk.redBright("Password Doesnt Match");
     }
 
-    await loggedIn(email)
+    await loggedIn(email);
   } catch (error) {
     console.log(error);
   }
 }
 
-export default loginUser
+export default loginUser;

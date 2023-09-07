@@ -1,40 +1,27 @@
 import chalk from "chalk";
-import loading from "./utils/loading.js";
+import loading from "../utils/loading.js";
 import { question, questionInt } from "readline-sync";
 import { setTimeout } from "timers/promises";
-import registerUser from "./user/registeruser.js";
-import deleteUser from "./user/deleteUser.js";
+import createTodo from "./createTodo.js";
+import viewTodo from "./viewTodo.js";
+import editTodo from "./editTodo.js";
 
-/* 
-
-User Login
-User Register
-Delete User
-
-*CRUD ( Create , Read , Update , Delete )
-Insert Todo
-View Todo's
-Edit Todo
-Delete Todo
-
-*/
-
-async function main() {
+async function loggedIn(email) {
   try {
     console.clear();
     console.log(
       chalk.green("*************************************************")
     );
-    console.log("\t\t TODO CLI \t\t");
+    console.log("\t\t User Todo \t\t");
     console.log(
       chalk.green("*************************************************")
     );
 
     const options = [
       "Exit The Program",
-      "User Registration",
-      "USer Login",
-      "User Delete",
+      "Create Todo",
+      "View Todo",
+      "Edit Todo",
     ];
     options.forEach((ele, i) => {
       console.log(`Enter ${i} to ${ele}`);
@@ -44,23 +31,24 @@ async function main() {
       let spinner = loading(chalk.bgGreenBright("Enter Valid Input : "));
       await setTimeout(3000);
       spinner.stop(true);
-      return main();
+      return loggedIn(email);
     }
     switch (option) {
       case 0:
         console.log("Exit The Program ");
         return;
       case 1:
-        // console.log("User registration ");
-        await registerUser();
+        // console.log("Create Todo ");
+        await createTodo(email);
         break;
       case 2:
-        console.log("User Login ");
+        // console.log("View Todo");
+        await viewTodo(email);
 
         break;
       case 3:
-        // console.log("User Delete ");
-        await deleteUser();
+        // console.log("Edit Todo");
+        await editTodo(email);
         break;
     }
     let willContinue = question("Do you want To continue ? (y/n)");
@@ -73,7 +61,7 @@ async function main() {
       let spinner = loading("Redirecting To The MEnu .........");
       await setTimeout(3000);
       spinner.stop(true);
-      return main();
+      return loggedIn(email);
     } else {
       console.log(chalk.bgRedBright("Thank you For USing CLI Application"));
     }
@@ -82,4 +70,4 @@ async function main() {
   }
 }
 
-main();
+export default loggedIn;

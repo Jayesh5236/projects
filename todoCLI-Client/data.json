@@ -1,0 +1,18 @@
+[
+  {
+    "username": "Jayesh",
+    "email": "j@gmail.com",
+    "phone": "6221",
+    "address": "6221",
+    "password": "$2b$12$HSX/4WzX1gLwnStp9.mF9uluRkJToCQi.rBrngwG5apNhemqStAra",
+    "todo": []
+  },
+  {
+    "username": "Densi",
+    "email": "moti@gmail.com",
+    "phone": "5620",
+    "address": "5620",
+    "password": "$2b$12$3KGthW3vT8EkplqurAKLTeehows0hnW4imYMfo4pFv32vF15x2RxC",
+    "todo": [{ "name": "heelo", "isCompleted": false, "taskId": "ACpvmQ" }]
+  }
+]
