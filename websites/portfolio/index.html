@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jayesh Portfolio Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="./images/logo.png" alt="" class="logo" />
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Full Stack Web Developer</p>
+          <h1>
+            Hi,I Am <span> Jayesh </span><br />
+            Joshi From India
+          </h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------------about -->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="./images/user.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="subtitle">About Me</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+              impedit voluptatibus aperiam, consequuntur voluptatum aliquam
+              magni minima quisquam a incidunt ut et, quam dolorem provident
+              labore atque tenetur, eaque accusantium quia sint eius voluptate
+              perferendis. Vel numquam eveniet aspernatur dolorum.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+              <p class="tab-links" onclick="opentab('experience')" >Experience</p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Front-end</span><br />development skills</li>
+                <li><span>Back-end </span><br />development skills</li>
+                <li><span>Database </span><br />management skills</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>2023</span><br />Lorem, ipsum.</li>
+                <li><span>2022 </span><br />Lorem, ipsum.</li>
+                <li><span>2021 </span><br />Lorem, ipsum.</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2020</span><br />Lorem, ipsum.</li>
+                <li><span>2018</span><br />Lorem, ipsum.</li>
+                <li><span>2019</span><br />Lorem, ipsum.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+  
+        function opentab(tabname) {
+          for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+          }
+          for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+          }
+          event.currentTarget.classList.add("active-link")
+          document.getElementById(tabname).classList.add("active-tab")
+        }
+      </script>
+  </body>
+</html>
