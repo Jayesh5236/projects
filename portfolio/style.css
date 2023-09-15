@@ -2,34 +2,63 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-  
-  /* Apply styles to the body */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
-    background: linear-gradient( #d95050, #621e1e);
-  }
-  
-
-.nav-main{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
+header {
+  background: yellow;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
- li a {
-    text-decoration: none;
- }
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
+
+header img {
+  width: 50px;
+  cursor: pointer;
+  border: 3px solid #333;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav ul li {
+  margin: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: crimson;
+}
+
+#about{
+  background-color: burlywood;
+}
+#education {
+  background-color: blueviolet;
+  margin-top: 10px;
+}
+table {
+  cursor: default;
+  border-collapse: collapse;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+}
+
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 10px;
+  border: 2px solid red;
+}
+
+td {
+  background-color: yellowgreen;
+  padding: 10px;
+  border: 2px solid #ddd;
+}
+
